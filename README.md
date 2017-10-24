@@ -7,3 +7,4 @@ Todo :
 - génération de l'entité Pony
 - génération de la table résultante
 - ajout de deux entrées de table pour test
+- création du controller PonyControler
