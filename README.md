@@ -3,3 +3,4 @@ API symfony permettant de gérer (CRUD) une base de données d'infos sur l'unive
 
 Todo :
 - Création du projet Symfony
+- page racine de présentation du projet 
