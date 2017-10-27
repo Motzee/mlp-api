@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Pony
@@ -18,94 +19,109 @@ class Pony
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"listing", "details"})
      */
     private $id;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Serializer\Groups({"listing", "details"})
      */
     private $name;
 
     /**
      * @var int
-     *
      * @ORM\Column(name="family", type="integer", nullable=true)
+     * @Serializer\Groups({"details"})
      */
     private $family;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="type", type="string", length=255)
+     * @Serializer\Groups({"listing", "details"})
      */
     private $type;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="job", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"details"})
      */
     private $job;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="cutiemark", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"details"})
      */
     private $cutiemark;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="body", type="string", length=255)
+     * @Serializer\Groups({"details"})
      */
     private $body;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="mane", type="string", length=255)
+     * @Serializer\Groups({"details"})
      */
     private $mane;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="eyes", type="string", length=255)
+     * @Serializer\Groups({"details"})
      */
     private $eyes;
 
     /**
      * @var bool
-     *
      * @ORM\Column(name="antagonist", type="boolean")
+     * @Serializer\Groups({"details"})
      */
     private $antagonist;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="other", type="string", length=3000, nullable=true)
+     * @Serializer\Groups({"details"})
      */
     private $other;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="imgpony", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"listing", "details"})
      */
     private $imgpony;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="imgcutiemark", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"details"})
      */
     private $imgcutiemark;
 
 
+    /**
+     * Set id
+     *
+     * @param string $id
+     *
+     * @return Pony
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+    
     /**
      * Get id
      *
@@ -317,8 +333,8 @@ class Pony
      */
     public function setAntagonist($antagonist)
     {
-        $this->antagonist = $antagonist;
-
+        $this->antagonist = $antagonist ;
+        
         return $this;
     }
 
